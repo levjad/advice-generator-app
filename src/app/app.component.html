@@ -1,0 +1,17 @@
+@if (slip$ | async; as slipResponse) {
+  <mat-card>
+    <mat-card-content>
+      <h5>ADVICE #{{ slipResponse.slip.id }}</h5>
+      <p>"{{ slipResponse.slip.advice }}"</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button class="advice-shuffle-btn" (click)="fetchAdvice()" mat-mini-fab>
+        <mat-icon color="primary">shuffle</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+}
+
+@else {
+  <mat-spinner color="accent"></mat-spinner>
+}
